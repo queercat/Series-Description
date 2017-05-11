@@ -34,26 +34,25 @@ unsigned int graphs;
 class Node {
 	private:
 		//The unique identity of the node.
-		unsigned int indetity;
+		unsigned int identity;
 
 		//Number of edges it has.
 		unsigned int edges;
 
-		//Edges it has.
-		Node *edges;
 	public:
 		// setIdentity ... Sets the identity of the node.
 		void setIdentity(unsigned int identity) {
 			this->identity = identity;
 		}
 
-		// setEdges ... Sets the edge partners of specific nodes. 
+		// setEdges ... Sets the edge count of specific nodes. 
 		void setEdges(unsigned int edges) {
 			this->edges = edges;
 		}
 
 		// setEdgePairs ... Set the edges it has.
-}
+
+};
 
 class Graph {
 	private:
@@ -90,7 +89,7 @@ class Graph {
 
 		// pairNodes ... Create a line between nodes i and j. 
 		void pairNodes(unsigned int i, unsigned int j) {
-			this->IJ[i][j]
+			this->IJ[i][j];
 		}
 
 		// setNodeCount ... Set number of nodes.
