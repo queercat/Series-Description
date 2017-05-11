@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <list>
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -30,6 +31,30 @@
 //Amount of graph descriptions there are.
 unsigned int graphs;
 
+class Node {
+	private:
+		//The unique identity of the node.
+		unsigned int indetity;
+
+		//Number of edges it has.
+		unsigned int edges;
+
+		//Edges it has.
+		Node *edges;
+	public:
+		// setIdentity ... Sets the identity of the node.
+		void setIdentity(unsigned int identity) {
+			this->identity = identity;
+		}
+
+		// setEdges ... Sets the edge partners of specific nodes. 
+		void setEdges(unsigned int edges) {
+			this->edges = edges;
+		}
+
+		// setEdgePairs ... Set the edges it has.
+}
+
 class Graph {
 	private:
 		//Vertices or node points.
@@ -39,7 +64,7 @@ class Graph {
 		unsigned int M;
 
 		//Pairs of linked vertices.
-		unsigned int* I;
+		unsigned int **IJ;
 
 	public:
 		// getNumberOfPaths ... Return the amount of paths there are from 1 ... N.
@@ -63,9 +88,9 @@ class Graph {
 			return distance;
 		}
 
-		// pairNodes ... Create a line between two nodes. 
+		// pairNodes ... Create a line between nodes i and j. 
 		void pairNodes(unsigned int i, unsigned int j) {
-
+			this->IJ[i][j]
 		}
 
 		// setNodeCount ... Set number of nodes.
