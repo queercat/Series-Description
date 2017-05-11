@@ -1,0 +1,9 @@
+Graph number: 1
+Shortest path: 1
+Longest path: 4
+Number of paths: 8
+
+Graph number: 2
+Shortest path: 4
+Longest path: 8
+Number of paths: 16

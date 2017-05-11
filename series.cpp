@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <stdio.h>
 
 /*
  *	Series.cpp -- Describe a series of acyclical graphs. Input will be given as...
@@ -23,8 +25,19 @@
  * 		-Linear time O(n+m) [adjacency list], Exponential time O(n^2) [adjacency matrix].
  */
 
+// getInput ... Gets the line from the file.
+void getInput() {	
+	std::string line;
+	
+	while (getline(std::cin, line)) {
+		std::cout << line << std::endl; 	
+	}
+}
+
 // main .. The main functions.
 int main() {
-   
-    return 0;
+	//Get  the input from the file.
+	getInput();
+
+	return 0;
 }

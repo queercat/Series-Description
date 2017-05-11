@@ -1,0 +1,9 @@
+#C++ is the language.
+language: cpp 
+
+#Defining the compiler.
+compiler:
+        - gcc
+
+script:
+        - make && make test
