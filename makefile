@@ -1,2 +1,2 @@
 target:
-	g++ series.cpp -o series
+	g++ series.cpp -o desc
