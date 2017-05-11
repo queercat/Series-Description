@@ -63,8 +63,8 @@ class Graph {
 			return distance;
 		}
 
-		// connectNodes ... Create a line between two nodes. 
-		void connectNodes(unsigned int i, unsigned int j) {
+		// pairNodes ... Create a line between two nodes. 
+		void pairNodes(unsigned int i, unsigned int j) {
 
 		}
 
@@ -95,6 +95,7 @@ void debug() {
 	std::cout << "Number of graphs: " << graphs << std::endl;
 }
 
+// debugGraph ... Debug information about the graph.
 void debugGraph(Graph graph) {
 	std::cout << "Number of nodes: " << graph.getNodeCount() << std::endl;
 	std::cout << "Number of lines: " << graph.getLineCount() << std::endl;
@@ -136,7 +137,7 @@ void getInput() {
 
 // main .. The main functions.
 int main() {
-	//Get  the input from the file and evaluate.
+	//Get the input from the file and evaluate.
 	getInput();
 
 	//Debug information pertaining to the program.
