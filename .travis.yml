@@ -4,6 +4,7 @@ language: cpp
 #Defining the compiler.
 compiler:
         - gcc
+        - clang
 
 script:
         - make && make test
