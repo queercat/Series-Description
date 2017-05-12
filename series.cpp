@@ -31,98 +31,14 @@
 //Amount of graph descriptions there are.
 unsigned int graphs;
 
-class Node {
-	private:
-		//The unique identity of the node.
-		unsigned int identity;
-
-		//Number of edges it has.
-		unsigned int edges;
-
-	public:
-		// setIdentity ... Sets the identity of the node.
-		void setIdentity(unsigned int identity) {
-			this->identity = identity;
-		}
-
-		// setEdges ... Sets the edge count of specific nodes. 
-		void setEdges(unsigned int edges) {
-			this->edges = edges;
-		}
-
-		// setEdgePairs ... Set the edges it has.
-
-};
-
-class Graph {
-	private:
-		//Vertices or node points.
-		unsigned int N;
-
-		//Edges or lines.
-		unsigned int M;
-
-		//Pairs of linked vertices.
-		unsigned int **IJ;
-
-	public:
-		// getNumberOfPaths ... Return the amount of paths there are from 1 ... N.
-		unsigned int getNumberOfPaths() {
-			unsigned int paths;
-
-			return paths;
-		}
-
-		// getLongestPath ... Return the longest path of the graph.
-		unsigned int getLongestPath() {
-			unsigned int distance;
-
-			return distance;
-		}
-
-		// getShortestPath ... Return the shortest path of the graph.
-		unsigned int getShortestPath() {
-			unsigned int distance;
-
-			return distance;
-		}
-
-		// pairNodes ... Create a line between nodes i and j. 
-		void pairNodes(unsigned int i, unsigned int j) {
-			this->IJ[i][j];
-		}
-
-		// setNodeCount ... Set number of nodes.
-		void setNodeCount(unsigned int N) {
-			this->N = N; 
-		}
-
-		// setLineCount ... Set number of connected nodes.
-		void setLineCount(unsigned int M) {
-			this->M = M;
-		}
-
-		// getNodeCount ... Return the number of nodes.
-		unsigned int getNodeCount() {
-			return this->N;
-		}	
-
-		// getLineCount ... Return the number of lines.
-		unsigned int  getLineCount() {
-			return this->M;
-		}
-};
-
-
 // debug ... Debug information.
 void debug() {
 	std::cout << "Number of graphs: " << graphs << std::endl;
 }
 
-// debugGraph ... Debug information about the graph.
-void debugGraph(Graph graph) {
-	std::cout << "Number of nodes: " << graph.getNodeCount() << std::endl;
-	std::cout << "Number of lines: " << graph.getLineCount() << std::endl;
+// readLines ... Read the lines from the input and evaluate.
+void readLines() {
+
 }
 
 // getInput ... Gets the line from the file and evaluate that.
@@ -136,27 +52,10 @@ void getInput() {
 	//Set graphs count before loop.
 	getline(std::cin, line);
 	graphs = atoi(line.c_str());
-	
-	//Creating the graph reference.
-	Graph graph;
 
-	//Get all the lines of the file.
-	while (getline(std::cin, line)) {
-		//Depending on the values write to different places.
-		switch(lineCount) {
-			case 0:
-				graph.setNodeCount(atoi(line.c_str()));
-			case 1:
-				graph.setLineCount(atoi(line.c_str()));
-		}
-
-		//Itterate the line count!
-		lineCount++;
-	}
-
-	//Get debug information about the graph.
-	debugGraph(graph);
-
+	for (graphDescriptions = 0; graphDescriptions < graphs; graphDescription++){	
+		readLines();
+	{
 }
 
 // main .. The main functions.
