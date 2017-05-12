@@ -2,8 +2,9 @@ all:
 	g++ series.cpp -o desc
 
 out:
-	./desc< inSmall.txt
+	./desc< inSmall.txt > out.txt
+	vim out.txt
 
 test:
-	./desc< inSmall.txt > outSmall.txt
-	diff outSmall.txt outSmallExpected.txt
+	./desc< inSmall.txt > out.txt
+	diff out.txt outSmallExpected.txt

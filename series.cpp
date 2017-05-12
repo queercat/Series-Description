@@ -29,42 +29,47 @@
 
 /* Global Variables */
 //Amount of graph descriptions there are.
-unsigned int graphs;
-
-// debug ... Debug information.
-void debug() {
-	std::cout << "Number of graphs: " << graphs << std::endl;
-}
-
-// readLines ... Read the lines from the input and evaluate.
-void readLines() {
-
-}
+int graphs;
 
 // getInput ... Gets the line from the file and evaluate that.
 void getInput() {	
-	//The line we will be reading into.
-	std::string line;
+	//Setting how many graphs there are.
+    std::cin >> graphs;
+   
+    std::cout << graphs << std::endl; 
 
-	//Unsigned int that acts as the line count.
-	unsigned int lineCount = 0;
+    for (int graphDescription = 0; graphDescription < graphs; graphDescription++){	
+        //Number of nodes.
+        int N;
+        std::cin >> N;
 
-	//Set graphs count before loop.
-	getline(std::cin, line);
-	graphs = atoi(line.c_str());
+        //Number of edges.
+        int M;
+        std::cin >> M;
 
-	for (graphDescriptions = 0; graphDescriptions < graphs; graphDescription++){	
-		readLines();
-	{
+        //Creating array for vertice edge pairs.
+        int *IJ;
+        
+        //Setting the tokens for getting the set IJ values.
+        int I;
+        int J;
+
+        //Itterate over the following pairs and assign them.
+        for (int i = 0; i < M; i++) {
+            std::cin >> I >> J;
+            std::cout << "I: " << I; 
+            std::cout << " J: " << J << std::endl;
+        }
+
+        //Debug info
+        std::cout << "Number of vertices: " << N << std::endl;
+        std::cout << "Number of edges: " << M << std::endl;
+	}
 }
 
 // main .. The main functions.
 int main() {
 	//Get the input from the file and evaluate.
 	getInput();
-
-	//Debug information pertaining to the program.
-	debug();
-	
 	return 0;
 }
