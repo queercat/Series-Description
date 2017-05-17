@@ -66,13 +66,76 @@ void zeroArr(int **arr, int size) {
     }
 }
 
+// getMin ... Find vertex with minimum distance value.
+int getMin(int *dist, bool *visited, int size) {
+	//Set min value as infinity.
+	int min = INT_MAX, min_index;
+
+	for (int v = 0; v < size; v++) {
+		if (!visited[v] && dist[v] <= min) {
+			min = dist[v], min_index = v;
+		}
+	}
+
+	//Return vertice with smallest distance.
+	return min_index;
+}
+
+int printDistances(int *dist, int v) {
+	for (int i = 0; i < v; i++) {
+		std::cout << "Vertex: " << i << " -- Distance from source: " << dist[i] << std::endl;
+	}
+
+	std::cout << std::endl;
+}
+
 // getShortestPath ... Return the shortest path given an adjacency matrix.
 int getShortestPath(int **arr, int size) {
 	//Setup a reference variable for the shortest path.
-	int shortestPath;
+	int shortestPath = 0;
+
+	//Dijkstra's Algorithm
+	//1. Assign to every node a distance value, [source] = 0, [all else] = infinity.
+	//2. Set the initial node as current and mark all other nodes as unvisited.
+	//3. For the current node look at all neighbors and consider distances. (1 in an unweighted)
+	//4. Once done considering mark current node as visited and remove from unvisited set.
+	//5. If the destination node has been marked visited when planning a route or the smallest value of the set is infinity stop. The algorithm is done.
+	//6. Else go back up to the next node that is marked with shortest distance and go back to step 3.
+	
+	//Creating the visited array.
+	bool *visited = new bool [size];
+	
+	//Creating the distance array.
+	int *distance = new int [size];
+
+	//Setting all values to false.
+	for (int cell = 0; cell < size; cell++) {
+		visited[cell] = false;
+		distance[cell] = INT_MAX;
+	}
+
+	//Source distance is always 0.
+	distance[0] = 0;
+
+	//Looping through all vertices except last.
+	for (int v = 0; v < size - 1; v++) {
+		int minVertex = getMin(distance, visited, size);
+
+		visited[v] = true;
+
+		//Updating distance matrix.
+		for (int adv = 0; adv < v; adv++) {
+			if (!visited[adv] && distance[minVertex] != INT_MAX) {
+				distance[adv] = distance[minVertex];	
+			} 
+		}
+		
+	}
+
+	printDistances(distance, size);
 	
 	//Return the shortest path.
-	return shortestPath;
+	return distance[size-1];
 }
 
 // getLongestPath ... Return the longest path given an adjacency matrix.
@@ -130,7 +193,6 @@ void getInput() {
 	std::cout << "Longest Path: " << getLongestPath(IJ, N) << std::endl;
 	std::cout << "Number of paths: " << getSumPaths(IJ, N) << std::endl << std::endl;
 
-	debugArray(IJ, N);
     }
 }
 
