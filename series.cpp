@@ -37,8 +37,8 @@ void debugArray(int **arr, int size) {
     int rows = size;
     int cols = size;
 
-    for (int col = 0; col < cols; col++){
-        for (int row = 0; row < rows; row++) {
+    for (int row = 0; row < rows; row++){
+        for (int col = 0; col < cols; col++) {
             std::cout << arr[row][col] << " ";
         }
 
@@ -46,7 +46,7 @@ void debugArray(int **arr, int size) {
     }
 
     //Spacing
-    std::cout << std::endl << std::endl << std::endl;
+    std::cout << std::endl;
 }
 
 // zeroArr ... Zero an array.
@@ -57,7 +57,7 @@ void zeroArr(int **arr, int size) {
 
     //Set all values to zero.
     for (int row = 0; row < rows; row++) {
-        //Set the arr[x] to the correct size.
+       //Set the arr[x] to the correct size.
         arr[row] = new int[size];
         for (int col = 0; col < cols; col++) {
             //Set values to zero.
@@ -66,66 +66,12 @@ void zeroArr(int **arr, int size) {
     }
 }
 
-// returnSmallest ... Return the smallest value as the index from an arr.
-int returnSmallest(int *distance, int size) {
-	//Declaring the smallest value.
-	int smallest = 0;
-
-	//Creating for loop.
-	for (int row = 0; row < size; row++) {
-		if (smallest >= distance[row]) {
-			smallest = distance[row];
-		}
-	}
-
-	return smallest;
-}
-
-// findShortest ... Finds the shortest distance to a specific vetex.
-int findShortest(int *arr, size) {
-	//Smallest index.
-	int smallest = 0;
-	
-	for (row = 0; row < size; row++) {
-		if (arr[row] != 0) {
-			
-		}	
-	}
-}
-
 // getShortestPath ... Return the shortest path given an adjacency matrix.
 int getShortestPath(int **arr, int size) {
-	//Shortest Path.
+	//Setup a reference variable for the shortest path.
 	int shortestPath;
-
-	//Creating secondary vertex matrix.
-	int **vertexMatrix = arr;
 	
-	//Create a distance array.
-	int *distanceArr;
-	//Initialize size.
-	distanceArr = new int [size];
-
-	//Create a if this thing has been visited array.
-	bool *hasVisited;
-	//Initalize size.
-	hasVisited = new bool [size];
-
-	//Set the value to the source to equal 0.
-	distanceArr[0] = 0;
-
-	//Set all other values to infinity.
-	for (int node = 1; node < size; node++) {
-		//Set distance of not source to max value.
-		distanceArr[node] = INT_MAX;
-		//Set the if it has been visited to false starting out. 
-		hasVisited[node] = false;
-	}
-
-	for (int i = 0; i < size - 1; i++) {
-		 shortestPath = findShortest(arr[i]);
-	}
-
+	//Return the shortest path.
 	return shortestPath;
 }
 
@@ -184,7 +130,7 @@ void getInput() {
 	std::cout << "Longest Path: " << getLongestPath(IJ, N) << std::endl;
 	std::cout << "Number of paths: " << getSumPaths(IJ, N) << std::endl << std::endl;
 
-
+	debugArray(IJ, N);
     }
 }
 
